@@ -68,9 +68,10 @@ fun CanvasScreen(modifier: Modifier = Modifier) {
             delay(10L)
             minionX += 5
             minionY += 10
-            // 選擇性：超出畫布右邊就回到左邊
-            if (canvasH > 0f && minionY > canvasH) minionY = 0f
-            if (canvasW > 0f && minionX > canvasW) minionX = 0f
+            if (canvasH > 0f && minionY > canvasH && canvasW > 0f && minionX > canvasW){
+                minionX = 0f
+                minionY = 0f
+            }
         }
     }
 
